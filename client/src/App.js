@@ -35,10 +35,12 @@ const App = () => {
       return;
     }
 
-    const response = await fetch('/submit-form', {
+    console.log("Posting form")
+    const response = await fetch('https://user-form-glbj.onrender.com/submit-form', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'cors': 'no-cors'
       },
       body: JSON.stringify({ name, email, dob, phoneNumber })
     });
